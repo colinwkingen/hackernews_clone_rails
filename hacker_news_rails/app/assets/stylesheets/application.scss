@@ -10,3 +10,73 @@ body {
   font: 100% $font-stack;
   color: $primary-color;
 }
+
+input, textarea, label {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+.form_button {
+
+}
+
+li {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #888;
+  // list-style: none;
+  a, a:hover{
+    color: #888;
+  }
+  p {
+    font-size: 1em;
+  }
+  :hover {
+    list-style: none;
+  }
+
+}
+
+.link_title a {
+  text-decoration: none;
+  color: #333;
+}
+
+.link {
+  color: #666;
+}
+
+ .page_content {
+   height: 1000px;
+   padding: 2% 5%;
+ }
+
+.container {
+  padding: 0px;
+  background-color: $background-color;
+  width: 80%;
+}
+
+#navbar {
+  background-color: $background-navbar;
+  border-radius: 0;
+  height: 30px;
+  a {
+    padding: 5px;
+    color: black;
+  }
+  .navbar-brand {
+    height: 30px;
+    font-weight: bolder;
+    // padding-top: 5px;
+    // padding-bottom: 5px;
+    // padding-left: 5px;
+  }
+  .navbar  {
+    max-height:32px;
+    .navbar-default{
+      height: 30px;
+      margin-bottom: 500px;
+
+    }
+  }
+}

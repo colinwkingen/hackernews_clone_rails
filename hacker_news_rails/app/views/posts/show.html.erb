@@ -1,29 +1,31 @@
-<h1><%= @post.title %></h1>
+<div class="page_content">
+  <h3><%= @post.title %></h3>
 
-<p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
+  <p><%= link_to "Add a comment", new_post_comment_path(@post) %></p>
 
-<% if @post.comments.any? %>
-  <h4>Comments:</h4>
-  <ul>
-    <% @post.comments.each do |comment| %>
-      <li>
-        <%= comment.user %> |
-        <%= comment.content %>
-        <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
-        <%= link_to "Delete", post_comment_path(@post, comment),
-                              :data => {:confirm => "You sure?",
-                                        :method => "delete"} %>
-      </li>
+  <% if @post.comments.any? %>
+    <h4>Comments:</h4>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <%= comment.user %> |
+          <%= comment.content %>
+          <%= link_to "Edit", edit_post_comment_path(@post, comment) %>
+          <%= link_to "Delete", post_comment_path(@post, comment),
+                                :data => {:confirm => "You sure?",
+                                :method => "delete"} %>
+        </li>
+      <% end %>
+    </ul>
+    <% else %>
+      <p>The are not any comments for this post!</p>
     <% end %>
-  </ul>
-  <% else %>
-    <p>The are not any comments for this post!</p>
-  <% end %>
-<p></p>
-<hr>
-<p><%= link_to "Edit post", edit_post_path(@post) %></p>
-<p><%= link_to "Delete post", post_path(@post),
-                         :data => {:confirm => "You sure?",
-                                   :method => "delete"} %></p>
+  <p></p>
+  <hr>
+  <p><%= link_to "Edit post", edit_post_path(@post) %></p>
+  <p><%= link_to "Delete", post_path(@post),
+                           :data => {:confirm => "You sure?",
+                                     :method => "delete"} %></p>
 
-<p><%= link_to "Return to posts", posts_path %></p>
+  <p><%= link_to "Return to posts", posts_path %></p>
+</div>

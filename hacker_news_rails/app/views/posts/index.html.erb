@@ -1,12 +1,9 @@
-<h1>Posts</h1>
-
-<ul>
+<ol>
   <% @posts.each do |post| %>
-  <li><%= link_to post.title, post.url %><br>
-    <%= link_to 'comments', post_path(post) %> |
-    <%= post.comments.length %> comments
+  <li><p class="link_title"><%= link_to post.title, post.url %></p>
+    <p><%= link_to 'comments', post_path(post), id: "post-#{post.id}" %> |
+    <%= post.comments.length %> comments<p>
   </li>
+  <br>
   <% end %>
-</ul>
-
-<%= link_to "New Post", new_post_path %>
+</ol>
