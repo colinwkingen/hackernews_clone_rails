@@ -2,7 +2,10 @@
 
 <ul>
   <% @posts.each do |post| %>
-  <li><%= link_to post.title, post_path(post) %></li>
+  <li><%= link_to post.title, post.url %><br>
+    <%= link_to 'comments', post_path(post) %> |
+    <%= post.comments.length %> comments
+  </li>
   <% end %>
 </ul>
 
